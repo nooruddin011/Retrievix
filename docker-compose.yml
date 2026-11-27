@@ -1,0 +1,26 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.12.4          # pinned: the Query API used for hybrid search needs >= 1.10
+    restart: unless-stopped
+    ports: ["127.0.0.1:6333:6333"]        # localhost only: Qdrant has no auth unless you configure it
+    volumes: [qdrant_data:/qdrant/storage]
+
+  api:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - path: .env
+        required: false                    # works with defaults before you've created a .env
+    environment:
+      QDRANT_URL: http://qdrant:6333
+      QDRANT_WAIT_S: "60"                  # the API waits for Qdrant instead of crashing at start-up
+    ports: ["8000:8000"]
+    depends_on: [qdrant]
+    volumes:
+      - hf_cache:/models/hf                # cache downloaded HF weights across restarts
+      - ./models:/app/models               # your fine-tuned dense/sparse/router checkpoints
+      - ./data:/app/data                   # documents (uploads from the UI are written here)
+
+volumes:
+  qdrant_data:
+  hf_cache:

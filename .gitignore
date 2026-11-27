@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.egg-info/
+.pytest_cache/
+models/
+data/train/
+.venv/
+.upload-*.tmp
+node_modules/
+.DS_Store

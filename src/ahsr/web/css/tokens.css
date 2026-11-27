@@ -1,0 +1,59 @@
+/* Design tokens. Two channel colours carry meaning everywhere in the UI:
+   cobalt = the Meaning (dense) engine, amber = the Exact-match (sparse) engine. */
+@font-face { font-family: "Bitter"; src: url("/fonts/bitter.woff") format("woff"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Bitter"; src: url("/fonts/bitter-italic.woff") format("woff"); font-weight: 100 900; font-style: italic; font-display: swap; }
+@font-face { font-family: "DM Sans"; src: url("/fonts/dmsans.woff") format("woff"); font-weight: 100 1000; font-style: normal; font-display: swap; }
+@font-face { font-family: "DejaVu Sans Mono"; src: url("/fonts/dejavumono.woff") format("woff"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "DejaVu Sans Mono"; src: url("/fonts/dejavumono-bold.woff") format("woff"); font-weight: 700; font-display: swap; }
+
+:root {
+  --font-ui: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-read: "Bitter", Charter, "Iowan Old Style", Georgia, serif;
+  --font-mono: "DejaVu Sans Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --paper: #F1F2EE;  --surface: #FAFAF8;  --sunken: #E6E8E1;
+  --ink: #18212C;    --ink-2: #435063;    --ink-3: #5A6575;
+  --rule: #D6DAD1;   --rule-strong: #BCC2B8;
+
+  --meaning: #2F47C7;  --meaning-ink: #2A3FB0;  --meaning-soft: #E1E6FA;
+  --exact: #E39B12;    --exact-ink: #865000;    --exact-soft: #FAEBC8;
+  --mark: rgba(227, 155, 18, .36);
+  --ok: #26704E;   --ok-soft: #DAEDE2;
+  --bad: #AE3727;  --bad-soft: #F5DBD6;
+
+  --radius: 10px;  --radius-lg: 14px;  --radius-sm: 6px;
+  --shadow: 0 1px 0 rgb(24 33 44 / .04), 0 14px 32px -18px rgb(24 33 44 / .28);
+  --shadow-pop: 0 2px 6px rgb(24 33 44 / .08), 0 24px 48px -16px rgb(24 33 44 / .32);
+  --ease: cubic-bezier(.3, .7, .2, 1);
+  --content: 1160px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121821;  --surface: #19212D;  --sunken: #0E131B;
+    --ink: #E8ECF2;    --ink-2: #B0BAC8;    --ink-3: #8D99AB;
+    --rule: #28323F;   --rule-strong: #3B4757;
+    --meaning: #8FA0FF;  --meaning-ink: #AAB7FF;  --meaning-soft: #222C55;
+    --exact: #F0B43A;    --exact-ink: #F3C35F;    --exact-soft: #3A2F13;
+    --mark: rgba(240, 180, 58, .30);
+    --ok: #5CC594;   --ok-soft: #173529;
+    --bad: #F08A7A;  --bad-soft: #3E201C;
+    --shadow: 0 1px 0 rgb(0 0 0 / .3), 0 14px 32px -18px rgb(0 0 0 / .7);
+    --shadow-pop: 0 2px 6px rgb(0 0 0 / .4), 0 24px 48px -16px rgb(0 0 0 / .7);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #121821;  --surface: #19212D;  --sunken: #0E131B;
+  --ink: #E8ECF2;    --ink-2: #B0BAC8;    --ink-3: #8D99AB;
+  --rule: #28323F;   --rule-strong: #3B4757;
+  --meaning: #8FA0FF;  --meaning-ink: #AAB7FF;  --meaning-soft: #222C55;
+  --exact: #F0B43A;    --exact-ink: #F3C35F;    --exact-soft: #3A2F13;
+  --mark: rgba(240, 180, 58, .30);
+  --ok: #5CC594;   --ok-soft: #173529;
+  --bad: #F08A7A;  --bad-soft: #3E201C;
+  --shadow: 0 1px 0 rgb(0 0 0 / .3), 0 14px 32px -18px rgb(0 0 0 / .7);
+  --shadow-pop: 0 2px 6px rgb(0 0 0 / .4), 0 24px 48px -16px rgb(0 0 0 / .7);
+  color-scheme: dark;
+}

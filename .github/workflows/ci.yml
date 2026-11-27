@@ -1,0 +1,26 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: { python-version: ["3.10", "3.12"] }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "${{ matrix.python-version }}" }
+      - run: pip install -e ".[dev]"
+      - run: python -m pyflakes src tests
+      - run: python -m pytest -q
+      - name: Retrieval regression gate
+        env: { ENCODER_BACKEND: hash }
+        run: python -m ahsr.eval.evaluate --min-hybrid-mrr 0.8
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Syntax-check every UI module
+        run: find src/ahsr/web -name '*.js' -print0 | xargs -0 -n1 node --check
+      - run: node --test tests/web/*.test.mjs

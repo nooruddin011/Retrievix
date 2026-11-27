@@ -1,0 +1,18 @@
+{"query": "ERR_0x884A", "relevant": ["errors.md"], "type": "identifier"}
+{"query": "ERR_0x1F02", "relevant": ["errors.md"], "type": "identifier"}
+{"query": "ERR_0x3C11", "relevant": ["errors.md"], "type": "identifier"}
+{"query": "--max-retries", "relevant": ["cli.md"], "type": "identifier"}
+{"query": "--dry-run", "relevant": ["cli.md"], "type": "identifier"}
+{"query": "client.create_webhook(url, secret, events)", "relevant": ["api_reference.md"], "type": "identifier"}
+{"query": "rotate_webhook_secret grace_period_s", "relevant": ["api_reference.md"], "type": "identifier"}
+{"query": "subscriptions.terminate at_period_end", "relevant": ["billing.md"], "type": "identifier"}
+{"query": "how to stop billing", "relevant": ["billing.md"], "type": "concept"}
+{"query": "my webhook signature check keeps failing", "relevant": ["errors.md"], "type": "concept"}
+{"query": "how do I preview a deployment without applying it", "relevant": ["cli.md"], "type": "concept"}
+{"query": "where can I get my receipts", "relevant": ["billing.md"], "type": "concept"}
+{"query": "app keeps getting unauthorized responses", "relevant": ["auth.md"], "type": "concept"}
+{"query": "too many requests, how do I slow down", "relevant": ["errors.md"], "type": "concept"}
+{"query": "how do I enable a new datacenter location", "relevant": ["errors.md"], "type": "concept"}
+{"query": "change the credit card on file", "relevant": ["billing.md"], "type": "concept"}
+{"query": "webhook fails with ERR_0x884A and also how do I cancel my subscription", "relevant": ["errors.md", "billing.md"], "type": "multi"}
+{"query": "what does --timeout do; how do I rotate my API token", "relevant": ["cli.md", "auth.md"], "type": "multi"}
